@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CRUDCar/CRUDCar.csproj" />
+  <Project Path="xUnitCarTest/xUnitCarTest.csproj" Id="0301e268-dea3-48ef-8aaa-5504dea9bb74" />
+</Solution>
