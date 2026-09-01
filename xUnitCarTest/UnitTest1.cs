@@ -1,5 +1,6 @@
 ﻿using CRUDCar.Model;
 using CRUDCar.RepoitoryCar;
+using CRUDCar.Services;
 
 namespace xUnitCarTest
 {
@@ -172,6 +173,25 @@ namespace xUnitCarTest
 
             // Act + Assert
             Assert.Throws<KeyNotFoundException>(() => repositoryCar.Delete(99));
+        }
+
+        [Fact]
+        public void Search_RedCars_OK()
+        {
+            // Arrange
+            CarRepository repository = new CarRepository();
+
+            repository.Create(new Car { Color = "Red" });
+            repository.Create(new Car { Color = "Blue" });
+            repository.Create(new Car { Color = "Red" });
+
+            CarService service = new CarService(repository);
+
+            // Act
+            List<Car> result = service.Search(car => car.Color == "Red");
+
+            // Assert
+            Assert.Equal(2, result.Count);
         }
     }
 }
