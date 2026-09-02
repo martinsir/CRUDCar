@@ -10,6 +10,7 @@ namespace CRUDCar.RepoitoryCar
         private List<T> items = new List<T>();
 
         //CRUD - C
+        // Asks for null check because in IModelWithId has only get id
         public T Create(T item)
         {
             if (item == null)
