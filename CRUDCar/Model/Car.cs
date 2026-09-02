@@ -1,7 +1,8 @@
-﻿
-namespace CRUDCar.Model
+﻿namespace CRUDCar.Model
+
 {
-    public class Car
+    public class Car : IModelWithId
+
     {
         private int _id;
         private string _vendor;
@@ -47,11 +48,9 @@ namespace CRUDCar.Model
         public bool TowBar { get => _towBar; set => _towBar = value; }
         public int Year { get => _year; set => _year = value; }
 
-
         public override string ToString()
         {
             return $"Id: {Id}, Vendor: {Vendor}, Model: {Model}, Color: {Color}, KmDriven: {KmDriven}, EngineKind: {EngineKind}, EnginePower: {EnginePower}, Doors: {Doors}, TowBar: {TowBar}, Year: {Year}";
         }
-
     }
 }
